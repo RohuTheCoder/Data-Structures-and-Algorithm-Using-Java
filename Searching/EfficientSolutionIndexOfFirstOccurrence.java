@@ -1,0 +1,28 @@
+public class EfficientSolutionIndexOfFirstOccurrence {
+
+    public static void main(String[] args) {
+       int arr[] = {5,10,10,15,20,20,20};
+       int low = 0;
+       int high = 6;
+       int x = 20;
+       int index = firstOccurrence(arr,low,high,x);
+       System.out.println(index);
+    }
+    static int firstOccurrence(int arr[],int low,int high,int x)
+    {
+        if(low>high)
+            return -1;
+        int mid = (low+high)/2;
+        if(x>arr[mid])
+            return firstOccurrence(arr, mid+1, high, x);
+        if(x<arr[mid])
+           return firstOccurrence(arr, low, mid-1, x);
+        else 
+        {
+            if(mid==0 || arr[mid-1] != arr[mid])
+                return mid;
+            else
+                return firstOccurrence(arr, low, mid-1, x);
+        }
+    }
+}
