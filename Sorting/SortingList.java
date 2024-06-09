@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-sgterh
 class SortingList
 {
     public static void main(String[] args) {
